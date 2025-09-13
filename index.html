@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/bd6a507ad6.js" crossorigin="anonymous"></script>
+        <title>Personal Portfolio Website</title>
+    </head>
+    <link rel="stylesheet" href="style.css">
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <img src="images/logo.png" class="logo">
+                    <ul id="sidemenu">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                    </ul>
+                    <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+                </nav>
+                <div class="header-text">
+                    <p>Web Developer</p>
+                    <h1>Hi, I'm <span>Sugumar</span><br> From Chennai</h1>
+                </div>
+            </div>   
+        </div>
+        <!----------------about-------------->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="images/user.jpg">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About Me</h1>
+                        <p>Hello! I'm Sugumar, a passionate web developer with user-friendly websites and applications. My journey in web development began with a fascination for how things work behind the scenes on the web, and it has grown into a fulfilling career where I get to blend creativity with technical expertise.</p>
+                        
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links"onclick="opentab('education')">Education</p>
+                            <p class="tab-links"onclick="opentab('experience')">Experience</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Web Development</span><br>Web app development</li>
+                                <li><span>Java</span><br>Java Developer</li>
+                                <li><span>Database</span><br>My SQL</li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>Thangavelu Engineering College</span><br>B.E(ComputerScience)<br>Year:2021-2025</li>
+                                <li><span>Anjuham Hr.Sec.School</span><br>HSC<br>Year:2021</li>
+                                <li><span>Anjuham Hr.Sec.School</span><br>SSCL<br>Year:2019</li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>Intern-Full Stack Developer</span><br>SHIASH INFO SOLUTIONS PVT LTD.,Chennai.<br>"As a Java Full Stack Developer intern, I gained hands-on experience in building end-to-end web applications. I worked extensively with Java, Spring Boot, and Hibernate on the backend, and used Angular and JavaScript for dynamic frontend development. My role involved collaborating with cross-functional teams to design and implement scalable, user-centric solutions. I also contributed to database management using MySQL, optimizing query performance. This experience honed my problem-solving skills and strengthened my ability to deliver robust software solutions."</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ <!-------------Projects----------------->
+ <div id="projects">
+	<div class="container">
+		<h1 class="sub-title">My Project</h1>
+			<div class="services-list">
+				<div>
+					<i class="fa-solid fa-code"></i>
+					<h2><center>Java Web Application</center></h2>
+					<p><center>Developed a Java-based system to simulate antimicrobial mechanisms in medical implants, integrating MySQL for data management and a web interface for monitoring healing and infection prevention.<br><br>Tech Stacks<br>HTML | CSS | JavaScript | Java | My SQL</center></p>
+					
+				</div>
+
+				
+				<div>
+                    <i class="fa-solid fa-user-tie"></i>
+					<h2><center>Personal Portfolio</center></h2>
+					<p><center>My Personal portfolio website to discover a showcase of my skills, projects, and certificates, reflecting my passion for innovation and creativity.<br><br>Tech Stacks<br>HTML | CSS | Java Script</center></p>
+
+					
+				</div>
+
+			</div>
+		
+	</div>
+</div>
+<!------------contact--------->
+<div id="contact">
+	<div class="container">
+		<div class="row">
+			
+			<div class="contact-left">
+				<h1 class="sub-title">Contact Me</h1>
+				<p><i class="fa-solid fa-paper-plane"></i> sugu230304@gmail.com</p>
+				<p><i class="fa-solid fa-square-phone"></i> +91 9840602531</p><br><br>
+				<div class="social-icons">
+					<a href="https://www.linkedin.com/in/sugumar-k-185723342?"><i class="fab fa-linkedin"></i></a>
+					<a href="mailto:sugu230304@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+					<a href="https://github.com/Sugumar230304"><i class="fab fa-github"></i></a>
+				</div>
+				<a href="C:\Users\ELCOT\Desktop\Sugumar Portfolio\Sugumar-1.pdf" class="btn">Download cv</a>
+			</div>
+
+			<div class="contact-right">
+				<form name="submit-to-google-sheet">
+					<input type="text" name="Name" placeholder="Your Name" required>
+					<input type="email" name="Email" placeholder="Your Email" required>
+					<textarea name="Message" rows="5" placeholder="Your Message"></textarea>
+					<button type="submit" class="btn btn2">Submit</button>
+				</form>
+				<span id="msg"></span>
+			</div>
+
+		</div>
+	</div>
+</div>
+        
+<script>
+
+var tablinks = document.getElementsByClassName("tab-links");
+var tabcontents = document.getElementsByClassName("tab-contents");
+
+function opentab(tabname){
+    for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+    }
+    for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab")
+}
+
+</script>
+<script>
+
+   var sidemenu = document.getElementById("sidemenu");
+
+   function openmenu(){
+    sidemenu.style.right = "0";
+   }
+   function closemenu(){
+    sidemenu.style.right = "-200px";
+   }
+
+</script>
+<script>
+    const scriptURL = 'https://docs.google.com/spreadsheets/d/11V4r4t92ANzq_7xleJTeSSYNlU7hEtIpAlxlDhCH9cw/edit?usp=drivesdk'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>     
+    </body>
+</html>
